@@ -18,6 +18,20 @@ Compatible SonarQube Version: `10.2.0`
 
 Supported Kubernetes Versions: From `1.24` to `1.27`
 
+## Configuring locally - Installing the chart
+```bash
+git clone https://github.com/SonarSource/helm-chart-sonarqube.git
+cd helm-chart-sonarqube/charts/sonarqube
+helm dependency update
+```
+Install chart with the following commands (login to your OCP cluster first):
+```bash
+oc new-project sonarqube
+cd helm-chart-sonarqube/charts/sonarqube
+helm upgrade --install -f values.yaml -n sonarqube sonarqube ./
+```
+
+
 ## Installing the chart
 
 To install the chart:
